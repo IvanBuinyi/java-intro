@@ -11,6 +11,13 @@ public class LiambdaApp {
         System.out.println(sumOf(array, exp2));
         System.out.println(sumOf(array, exp3));
         System.out.println(sumOf(array, (int i) -> i%2!=0)); //isOdd
+
+        System.out.println(sumOf(array, new Expression() {
+            @Override
+            public boolean isEqual(int i) {
+                return i >=0; //isNegative
+            }
+        }));
     }
 
     private static int sumOf(int[] arr, Expression expression ){
